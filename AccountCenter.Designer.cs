@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyBookings));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountCenter));
             this.SearchButton = new System.Windows.Forms.Button();
             this.MenuButton = new System.Windows.Forms.Button();
             this.gradientLabel2 = new TixNova_Final.GradientLabel();
@@ -189,7 +189,7 @@
             this.gradientLabel1.Size = new System.Drawing.Size(0, 45);
             this.gradientLabel1.TabIndex = 135;
             // 
-            // MyBookings
+            // AccountCenter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -208,7 +208,7 @@
             this.Controls.Add(this.gradientLabel1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "MyBookings";
+            this.Name = "AccountCenter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "YearsLaterBook";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

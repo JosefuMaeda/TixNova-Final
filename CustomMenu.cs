@@ -174,19 +174,9 @@ namespace TixNova__Final
                     this.Hide();
 
                     // 4. Find the Dashboard/Main window and hide it safely
-                    // We look for any open form that isn't the one we just opened
-                    List<Form> formsToHide = new List<Form>();
-                    foreach (Form f in Application.OpenForms)
-                    {
-                        if (f != bookingsForm && f != this && f.Visible)
-                        {
-                            formsToHide.Add(f);
-                        }
-                    }
-
-                    foreach (Form f in formsToHide) f.Hide();
+                    HideAllOtherForms(bookingsForm);
                 }
-                else if (text == "Account Settings") // Add this for your new form
+                else if (text == "Account Settings")
                 {
                     // 1. Create and Show the Account Center
                     AccountCenter accountForm = new AccountCenter();
@@ -198,11 +188,27 @@ namespace TixNova__Final
                     // 3. Hide everything else (Dashboard, etc.)
                     HideAllOtherForms(accountForm);
                 }
-                // ... other links ...
+                else if (text == "Logout")
+                {
+                    // 1. Clear the current user session
+                    UserSession.CurrentUsername = null; // or "" depending on how your class handles it
+
+                    // 2. Instantiate and show your Login Form 
+                    // IMPORTANT: Change 'LoginForm' if your class is named differently (e.g., Form1, Login)
+                    LoginForm loginForm = new LoginForm();
+                    loginForm.Show();
+
+                    // 3. Hide the custom menu
+                    this.Hide();
+
+                    // 4. Hide all other forms (like the Dashboard)
+                    HideAllOtherForms(loginForm);
+                }
             };
 
             this.Controls.Add(lbl);
         }
+
         private void HideAllOtherForms(Form activeForm)
         {
             List<Form> formsToHide = new List<Form>();
@@ -216,6 +222,7 @@ namespace TixNova__Final
             }
             foreach (Form f in formsToHide) f.Hide();
         }
+
         private void AddFooterLink(string text, int x, int y)
         {
             Label lbl = new Label
@@ -242,7 +249,7 @@ namespace TixNova__Final
             using (GraphicsPath path = GetRoundedRect(rect, 20))
             {
                 // Use a semi-transparent black to "darken" the blur 
-                // This makes it look more like your reference image (image_b02172.png)
+                // This makes it look more like your reference image
                 using (SolidBrush bg = new SolidBrush(Color.FromArgb(150, 10, 15, 25)))
                     g.FillPath(bg, path);
 

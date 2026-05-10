@@ -3,16 +3,22 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using System.Linq; // Required to search OpenForms
 
 namespace TixNova__Final
 {
     public class CustomSearchMenu : Form
     {
         private TextBox searchInput;
+        private bool isProcessingClick = false;
 
-        public CustomSearchMenu()
+
+        private readonly Form callingForm;
+
+
+        public CustomSearchMenu(Form caller)
         {
+            this.callingForm = caller;
+
             this.FormBorderStyle = FormBorderStyle.None;
             this.AllowTransparency = true;
             this.BackColor = Color.Black;
@@ -81,15 +87,14 @@ namespace TixNova__Final
 
         private void InitializeSearchUI()
         {
-            // --- The Search Bar ---
             searchInput = new TextBox
             {
-                Text = "Search for Movies, Cinemas or People....",
+                Text = "Search for Movies, or Cinemas ....",
                 BorderStyle = BorderStyle.None,
-                BackColor = Color.FromArgb(22, 28, 40), // Matches the bottom of your gradient
-                ForeColor = Color.LightGray,           // Brighter so it's visible
+                BackColor = Color.FromArgb(22, 28, 40),
+                ForeColor = Color.LightGray,
                 Font = new Font("Segoe UI", 12f),
-                Location = new Point(60, 55),          // Adjust this to center it in the capsule
+                Location = new Point(60, 55),
                 Width = 380
             };
 
@@ -99,7 +104,6 @@ namespace TixNova__Final
             this.Controls.Add(searchInput);
             searchInput.BringToFront();
 
-            // --- Content Columns ---
             int col1X = 30;
             int col2X = 270;
 
@@ -133,84 +137,71 @@ namespace TixNova__Final
             {
                 lbl.MouseEnter += (s, e) => lbl.ForeColor = Color.FromArgb(0, 191, 255);
                 lbl.MouseLeave += (s, e) => lbl.ForeColor = Color.White;
-
-                // Attach the click event to any non-header label
                 lbl.Click += MenuLabel_Click;
             }
 
             this.Controls.Add(lbl);
         }
 
-        // ==========================================
-        // REFACTORED: Click Event Logic Method
-        // ==========================================
+
+        private void OpenCategorySafely<T>() where T : Form, new()
+        {
+            if (isProcessingClick) return;
+            isProcessingClick = true;
+
+            T newForm = new T();
+
+
+            newForm.FormClosed += (s, args) =>
+            {
+                if (callingForm != null && !callingForm.IsDisposed)
+                {
+                    callingForm.Show();
+                    callingForm.BringToFront();
+                }
+            };
+
+            callingForm?.Hide();
+            newForm.Show();
+            this.Close();
+        }
+
         private void MenuLabel_Click(object sender, EventArgs e)
         {
             if (!(sender is Label clickedLabel)) return;
 
             string selectedCategory = clickedLabel.Text;
 
-            // Find the main dashboard instance
-            var mainDashboard = Application.OpenForms.OfType<MainDashBoard>().FirstOrDefault();
-
-            // Hide the search menu itself
-            this.Hide();
-
-            // Hide the dashboard safely
-            mainDashboard?.Hide();
-
             switch (selectedCategory)
             {
                 case "Top Horror Movies":
-                    SearchTopHorror horrorForm = new SearchTopHorror();
-                    horrorForm.FormClosed += (s, args) => mainDashboard?.Show();
-                    horrorForm.Show();
+                    OpenCategorySafely<SearchTopHorror>();
                     break;
-
                 case "Top Family Movies":
-                    SearchTopFamily familyForm = new SearchTopFamily();
-                    familyForm.FormClosed += (s, args) => mainDashboard?.Show();
-                    familyForm.Show();
+                    OpenCategorySafely<SearchTopFamily>();
                     break;
-
                 case "Top Animation Movies":
-                    SearchAnime searchAnimeForm = new SearchAnime();
-                    searchAnimeForm.FormClosed += (s, args) => mainDashboard?.Show();
-                    searchAnimeForm.Show();
+                    OpenCategorySafely<SearchAnime>();
                     break;
-
                 case "Drama Movies":
-                    GenreDrama genreDramaForm = new GenreDrama();
-                    genreDramaForm.FormClosed += (s, args) => mainDashboard?.Show();
-                    genreDramaForm.Show();
+                    OpenCategorySafely<GenreDrama>();
                     break;
-
                 case "Send Help":
-                    SendHelpForm sendHelpForm = new SendHelpForm();
-                    sendHelpForm.FormClosed += (s, args) => mainDashboard?.Show();
-                    sendHelpForm.Show();
+                    OpenCategorySafely<SendHelpForm>();
                     break;
-
                 case "Rated PG":
-                    RatedPGForm ratedPGForm = new RatedPGForm();
-                    ratedPGForm.FormClosed += (s, args) => mainDashboard?.Show();
-                    ratedPGForm.Show();
+                    OpenCategorySafely<RatedPGForm>();
                     break;
-
                 case "28 Years Later":
-                    YearsLaterForm yearsLaterForm = new YearsLaterForm();
-                    yearsLaterForm.FormClosed += (s, args) => mainDashboard?.Show();
-                    yearsLaterForm.Show();
+                    OpenCategorySafely<YearsLaterForm>();
                     break;
-
                 case "Rated PG-13":
-                    RatedPG13 ratedPG13 = new RatedPG13();
-                    ratedPG13.FormClosed += (s, args) => mainDashboard?.Show();
-                    ratedPG13.Show();
+                    OpenCategorySafely<RatedPG13>();
                     break;
 
                 default:
-                    mainDashboard?.Show();
+                    this.Close();
+                    callingForm?.BringToFront();
                     MessageBox.Show($"Coming soon: {selectedCategory} section!", "TixNova+ Search");
                     break;
             }
@@ -221,10 +212,8 @@ namespace TixNova__Final
             Graphics g = e.Graphics;
             g.SmoothingMode = SmoothingMode.AntiAlias;
 
-            // 1. Background Blur Tint
-            using (GraphicsPath mainPath = CreateMenuPath(1, 1, Width - 2, Height - 2))
+            using (GraphicsPath mainPath = CreateMenuPath(Width - 2, Height - 2))
             {
-                // Semi-transparent fill so the blur effect shows through
                 using (SolidBrush bgBrush = new SolidBrush(Color.FromArgb(150, 10, 15, 25)))
                 {
                     g.FillPath(bgBrush, mainPath);
@@ -236,15 +225,12 @@ namespace TixNova__Final
                 }
             }
 
-            // --- IMPROVED SEARCH BAR (GLASSY LOOK) ---
             Rectangle searchRect = new Rectangle(35, 42, 430, 45);
-            using (GraphicsPath capsule = GetRoundedRect(searchRect, 22)) // 22 is half height for perfect circles
+            using (GraphicsPath capsule = GetRoundedRect(searchRect, 22))
             {
-                // Dark fill for the bar
                 using (SolidBrush barBrush = new SolidBrush(Color.FromArgb(32, 38, 50)))
                     g.FillPath(barBrush, capsule);
 
-                // Subtle inner glow/border for the search bar
                 using (Pen barPen = new Pen(Color.FromArgb(60, 103, 190, 217), 1f))
                     g.DrawPath(barPen, capsule);
             }
@@ -262,7 +248,7 @@ namespace TixNova__Final
             return path;
         }
 
-        private GraphicsPath CreateMenuPath(int x, int y, int width, int height)
+        private GraphicsPath CreateMenuPath(int width, int height)
         {
             int radius = 25;
             int arrowW = 24; int arrowH = 16;
@@ -282,6 +268,14 @@ namespace TixNova__Final
             path.AddArc(0, arrowH, radius, radius, 180, 90);
             path.CloseFigure();
             return path;
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "CustomSearchMenu";
+            this.ResumeLayout(false);
         }
     }
 }

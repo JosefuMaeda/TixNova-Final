@@ -346,7 +346,7 @@ namespace TixNova__Final
             // Check if the menu is null or has been closed/disposed
             if (_searchMenu == null || _searchMenu.IsDisposed)
             {
-                _searchMenu = new CustomSearchMenu();
+                _searchMenu = new CustomSearchMenu(this);
 
                 // Calculate position relative to the screen, not the form
                 // This ensures it pops up exactly under your button

@@ -128,7 +128,7 @@
             this.linkLabel5.TabStop = true;
             this.linkLabel5.Text = "Categories";
             this.linkLabel5.VisitedLinkColor = System.Drawing.Color.Cyan;
-            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked_1);
+            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel5_LinkClicked);
             // 
             // linkLabel4
             // 
@@ -145,7 +145,7 @@
             this.linkLabel4.TabStop = true;
             this.linkLabel4.Text = "Shop";
             this.linkLabel4.VisitedLinkColor = System.Drawing.Color.Cyan;
-            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
+            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel4_LinkClicked);
             // 
             // linkLabel3
             // 
@@ -178,7 +178,7 @@
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Movies";
             this.linkLabel2.VisitedLinkColor = System.Drawing.Color.Cyan;
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel2_LinkClicked);
             // 
             // linkLabel1
             // 
@@ -195,7 +195,7 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Home";
             this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Cyan;
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel1_LinkClicked);
             // 
             // roundedPanel6
             // 

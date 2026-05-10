@@ -111,7 +111,7 @@
             this.linkLabel5.TabStop = true;
             this.linkLabel5.Text = "Categories";
             this.linkLabel5.VisitedLinkColor = System.Drawing.Color.Cyan;
-            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked_1);
+            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel5_LinkClicked_1);
             // 
             // linkLabel4
             // 
@@ -624,7 +624,7 @@
             this.roundedButton1.TabIndex = 78;
             this.roundedButton1.Text = "BOOK NOW";
             this.roundedButton1.UseVisualStyleBackColor = true;
-            this.roundedButton1.Click += new System.EventHandler(this.roundedButton1_Click);
+            this.roundedButton1.Click += new System.EventHandler(this.RoundedButton1_Click);
             // 
             // ShopForm
             // 

@@ -323,7 +323,7 @@ namespace TixNova__Final
         {
             if (_searchMenu == null || _searchMenu.IsDisposed)
             {
-                _searchMenu = new CustomSearchMenu();
+                _searchMenu = new CustomSearchMenu(this);
                 Point screenPos = SearchButton.PointToScreen(new Point(0, SearchButton.Height));
                 _searchMenu.Location = new Point(screenPos.X - (_searchMenu.Width / 2) + (SearchButton.Width / 2), screenPos.Y + 10);
                 _searchMenu.Show();
