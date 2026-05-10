@@ -14,7 +14,6 @@ namespace TixNova__Final
 {
     public partial class ShopBuy : Form
     {
-        // Field to store the previous form so we can go "Back" to it
         private readonly Form _parentForm;
         private CustomSearchMenu _searchMenu;
         private CustomMenu _sideMenu;
@@ -24,7 +23,6 @@ namespace TixNova__Final
 
         private readonly BookingData _bookingData;
 
-        // --- SNACK TRACKING FIELDS ---
         private int popcornQty = 0;
         private int nachosQty = 0;
         private int friesQty = 0;
@@ -32,26 +30,22 @@ namespace TixNova__Final
         private int sodaQty = 0;
         private int pringlesQty = 0;
 
-        // Prices (Based on your UI design)
         private const int PRICE_POPCORN = 200;
         private const int PRICE_NACHOS = 300;
         private const int PRICE_FRIES = 200;
         private const int PRICE_DEALS = 400;
         private const int PRICE_SODA = 100;
         private const int PRICE_PRINGLES = 100;
-
-        // Updated Constructor to accept the parent form
+  
         public ShopBuy(Form parent = null, BookingData bookingData = null)
         {
             InitializeComponent();
             this._parentForm = parent;
             this._bookingData = bookingData;
 
-            // UI Initializations
             MakeRoundedGradientButton(MenuButton, Color.FromArgb(78, 199, 220), Color.FromArgb(7, 89, 179), 30);
             MakeRoundedGradientButton(SearchButton, Color.FromArgb(78, 199, 220), Color.FromArgb(7, 89, 179), 35);
 
-            // Apply gradient to the main navigation buttons
             MakeRoundedGradientButton(roundedButton13, Color.FromArgb(78, 199, 220), Color.FromArgb(7, 89, 179), 20);
             MakeRoundedGradientButton(roundedButton14, Color.FromArgb(78, 199, 220), Color.FromArgb(7, 89, 179), 20);
 
@@ -79,7 +73,6 @@ namespace TixNova__Final
             return snacks;
         }
 
-        // Add this method to calculate total price
         private decimal CalculateTotalSnacksPrice()
         {
             decimal total = 0;
@@ -94,7 +87,6 @@ namespace TixNova__Final
 
         private void InitializeCounters()
         {
-            // Ensure all labels start at 0
             lblPopcornCount.Text = "0";
             lblNachosCount.Text = "0";
             lblFriesCount.Text = "0";
@@ -250,7 +242,6 @@ namespace TixNova__Final
             else if (qty > 0) qty--;
 
             lbl.Text = qty.ToString();
-            // Optional: Call a method here to update a "Total Price" label if you add one
         }
 
         // PopCorn
@@ -321,8 +312,6 @@ namespace TixNova__Final
             }
             else { _sideMenu.Visible = !_sideMenu.Visible; }
         }
-
-        // BACK BUTTON
         private void RoundedButton13_Click(object sender, EventArgs e)
         {
             if (_parentForm != null)
@@ -334,13 +323,11 @@ namespace TixNova__Final
             {
                 MoviesForm moviesTab = new MoviesForm();
 
-                // Show the movies list
                 moviesTab.Show();
                 this.Hide();
             }
         }
 
-        // PROCEED BUTTON
         private void RoundedButton14_Click(object sender, EventArgs e)
         {
             if (_bookingData == null)
@@ -350,11 +337,9 @@ namespace TixNova__Final
                 return;
             }
 
-            // Add snacks to booking data
             _bookingData.Snacks = GetSelectedSnacks();
             _bookingData.TotalSnacksPrice = CalculateTotalSnacksPrice();
 
-            // Pass to seat selection
             BookingSeats bookingSeats = new BookingSeats(_bookingData);
             bookingSeats.Show();
             this.Hide();

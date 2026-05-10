@@ -21,33 +21,28 @@ namespace TixNova__Final
             InitializeComponent();
 
             InitializeGlassContainer();
-
-            // Run this inside the Form_Load or after InitializeComponent
+ 
             glassContainer.Left = (this.ClientSize.Width - glassContainer.Width) / 2;
             glassContainer.Top = (this.ClientSize.Height - glassContainer.Height) / 2;
 
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
 
-            // Initialize UI Elements
             MakeRoundedGradientButton(MenuButton, Color.FromArgb(78, 199, 220), Color.FromArgb(7, 89, 179), 30);
             MakeRoundedGradientButton(SearchButton, Color.FromArgb(78, 199, 220), Color.FromArgb(7, 89, 179), 35);
             SetupAllLinkLabelsGlow();
             SetupMenu();
 
-            // Load the dynamic list
             LoadUserBookings();
         }
         private void InitializeGlassContainer()
         {
-            // Create the main glass container and assign it to our class variable
             glassContainer = new Panel
             {
                 Size = new Size(900, 550),
                 BackColor = Color.FromArgb(100, 20, 20, 20),
             };
 
-            // CENTER logic:
             glassContainer.Location = new Point((this.ClientSize.Width - glassContainer.Width) / 2,
                                               (this.ClientSize.Height - glassContainer.Height) / 2);
 
@@ -62,7 +57,6 @@ namespace TixNova__Final
 
             this.Controls.Add(glassContainer);
         } 
-        // Helper to calculate rounded paths
         private System.Drawing.Drawing2D.GraphicsPath GetRoundedRect(Rectangle bounds, int radius)
         {
             int diameter = radius * 2;
@@ -82,11 +76,10 @@ namespace TixNova__Final
         }
         private void LoadUserBookings()
         {
-            // Create the scrolling container inside the glassContainer
             FlowLayoutPanel listPanel = new FlowLayoutPanel
             {
-                Size = new Size(860, 500), // Slightly smaller than glassContainer
-                Location = new Point(20, 25), // Padding from top/left of glass
+                Size = new Size(860, 500),
+                Location = new Point(20, 25),
                 AutoScroll = true,
                 FlowDirection = FlowDirection.TopDown,
                 WrapContents = false,
@@ -120,10 +113,9 @@ namespace TixNova__Final
             {
                 Size = new Size(820, 110),
                 BackColor = Color.FromArgb(45, 45, 45),
-                Margin = new Padding(0, 10, 0, 10) // Space between cards
+                Margin = new Padding(0, 10, 0, 10) 
             };
 
-            // ROUND THE CARD EDGES
             card.Paint += (s, e) => {
                 e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
                 using (var path = GetRoundedRect(new Rectangle(0, 0, card.Width - 1, card.Height - 1), 20))
@@ -132,7 +124,6 @@ namespace TixNova__Final
                 }
             };
 
-            // BLUE STUB (Right Side)
             Panel blueStub = new Panel
             {
                 Width = 180,
@@ -140,13 +131,12 @@ namespace TixNova__Final
                 BackColor = Color.FromArgb(103, 190, 217)
             };
 
-            // CENTERED PRICE
             Label lblPrice = new Label
             {
                 Text = $"₱{data.TicketPrice:N2}",
                 Font = new Font("Segoe UI", 18f, FontStyle.Bold),
                 ForeColor = Color.Black,
-                TextAlign = ContentAlignment.MiddleCenter, // Vertical & Horizontal center
+                TextAlign = ContentAlignment.MiddleCenter,
                 Dock = DockStyle.Fill,
                 BackColor = Color.Transparent
             };
@@ -154,7 +144,6 @@ namespace TixNova__Final
             blueStub.Controls.Add(lblPrice);
             card.Controls.Add(blueStub);
 
-            // TEXT (Movie & Details)
             Label lblTitle = new Label
             {
                 Text = data.MovieName.ToUpper(),
@@ -331,8 +320,6 @@ namespace TixNova__Final
             public Color EndColor { get; set; }
         }
         #endregion
-
-        // Navigation Methods
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             MainDashBoard main = new MainDashBoard();

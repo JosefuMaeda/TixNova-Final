@@ -94,8 +94,8 @@ namespace TixNova_Final
 
             
 
-            string validUsername = "aj";
-            string validPassword = "1";
+            string validUsername = "JuanDelaCruz";
+            string validPassword = "juanpogi123";
 
             
             if (typedusername == validUsername && typedpassword == validPassword)

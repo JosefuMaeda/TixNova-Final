@@ -9,14 +9,13 @@ namespace TixNova_Final
     {
         public int BorderRadius { get; set; } = 30;
 
-        // Colors from your screenshot
         private readonly Color GradientStart = Color.FromArgb(0, 194, 255);
         private readonly Color GradientEnd = Color.FromArgb(45, 125, 255);
 
         private float pulseScale = 1.0f;
         private int pulseAlpha = 0;
         private readonly Timer pulseTimer;
-        private bool hasPulsed = false; // Prevents looping
+        private bool hasPulsed = false;
 
         public RoundedButton()
         {
@@ -30,13 +29,13 @@ namespace TixNova_Final
 
             pulseTimer = new Timer { Interval = 15 };
             pulseTimer.Tick += (s, e) => {
-                pulseScale += 0.05f; // Growth speed
-                pulseAlpha -= 10;    // Fade speed
+                pulseScale += 0.05f;
+                pulseAlpha -= 10; 
 
                 if (pulseAlpha <= 0)
                 {
                     pulseAlpha = 0;
-                    pulseTimer.Stop(); // Stop completely after one cycle
+                    pulseTimer.Stop();
                 }
                 this.Invalidate();
             };
@@ -47,9 +46,9 @@ namespace TixNova_Final
             base.OnMouseEnter(e);
             if (!hasPulsed)
             {
-                pulseAlpha = 200; // Starting brightness
+                pulseAlpha = 200; 
                 pulseScale = 1.0f;
-                hasPulsed = true; // Mark as done
+                hasPulsed = true;
                 pulseTimer.Start();
             }
         }
@@ -57,7 +56,7 @@ namespace TixNova_Final
         protected override void OnMouseLeave(EventArgs e)
         {
             base.OnMouseLeave(e);
-            hasPulsed = false; // Reset so it can pulse again next time you point at it
+            hasPulsed = false;
             pulseAlpha = 0;
             this.Invalidate();
         }
@@ -66,7 +65,6 @@ namespace TixNova_Final
         {
             pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
 
-            // 1. Draw the Base Gradient
             using (GraphicsPath path = GetRoundedPath(this.ClientRectangle, BorderRadius))
             {
                 this.Region = new Region(path);
@@ -76,7 +74,6 @@ namespace TixNova_Final
                 }
             }
 
-            // 2. Draw the Single Pulse
             if (pulseAlpha > 0)
             {
                 pevent.Graphics.ResetClip();
@@ -96,7 +93,6 @@ namespace TixNova_Final
                 }
             }
 
-            // 3. Draw Text
             TextRenderer.DrawText(pevent.Graphics, this.Text, this.Font, this.ClientRectangle, this.ForeColor,
                 TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
         }

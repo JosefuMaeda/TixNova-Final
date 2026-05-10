@@ -29,6 +29,33 @@ namespace TixNova__Final
             InitializeSearchUI();
         }
 
+        private void SearchInput_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+
+                string query = searchInput.Text.Trim().ToLower();
+
+                if (query == "28 years later")
+                {
+                    OpenCategorySafely<YearsLaterForm>();
+                }
+                else if (query == "send help")
+                {
+                    OpenCategorySafely<SendHelpForm>();
+                }
+                else if (query == "goodluck have fun")
+                {
+                    OpenCategorySafely<GoodluckHaveFunForm>();
+                }
+                else
+                {
+                    MessageBox.Show($"No results found for '{searchInput.Text}'. Try searching for '28 Years Later'!",
+                                    "TixNova Search", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
         protected override void OnHandleCreated(EventArgs e)
         {
             base.OnHandleCreated(e);
@@ -100,6 +127,8 @@ namespace TixNova__Final
 
             searchInput.Enter += (s, e) => { if (searchInput.Text.StartsWith("Search")) { searchInput.Text = ""; searchInput.ForeColor = Color.White; } };
             searchInput.Leave += (s, e) => { if (string.IsNullOrWhiteSpace(searchInput.Text)) { searchInput.Text = "Search for Movies, Cinemas or People..."; searchInput.ForeColor = Color.Gray; } };
+
+            searchInput.KeyDown += SearchInput_KeyDown;
 
             this.Controls.Add(searchInput);
             searchInput.BringToFront();

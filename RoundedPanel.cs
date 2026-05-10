@@ -44,7 +44,6 @@ namespace TixNova_Final
                 using (GraphicsPath pathSurface = GetFigurePath(rectSurface, BorderRadius))
                 using (GraphicsPath pathBorder = GetFigurePath(rectBorder, BorderRadius - BorderSize))
                 {
-                    // Fix: Handle null parent safely
                     Color parentBackColor = this.Parent != null ? this.Parent.BackColor : Color.Transparent;
                     using (Pen penSurface = new Pen(parentBackColor, smoothSize))
                     using (Pen penBorder = new Pen(BorderColor, BorderSize))

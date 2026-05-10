@@ -27,13 +27,9 @@ namespace TixNova__Final
   
         private void fadingImageButton1_Click(object sender, EventArgs e)
         {
-            // 1. Set the exact same scroll amount as the Right button
             int scrollAmount = 840;
-
-            // 2. Move the track to the right (reveals movies on the left)
             movieTrackPanel.Left += scrollAmount;
 
-            // 3. Stop perfectly at the beginning of the list
             if (movieTrackPanel.Left > 0)
             {
                 movieTrackPanel.Left = 0;

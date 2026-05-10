@@ -1,4 +1,4 @@
-﻿using System.Drawing;
+﻿ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
@@ -6,17 +6,15 @@ namespace TixNova__Final
 {
     public class OutlineButton : Button
     {
-        public int BorderRadius { get; set; } = 12; // Slightly smaller radius to match the target
+        public int BorderRadius { get; set; } = 12;
         public int BorderThickness { get; set; } = 1;
-        public Color BorderColor { get; set; } = Color.FromArgb(100, 120, 140); // Lighter gray/blue outline to stand out
+        public Color BorderColor { get; set; } = Color.FromArgb(100, 120, 140);
 
         public OutlineButton()
         {
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderSize = 0;
 
-            // FIX: Using a solid color instead of Transparent to fix the black box issue.
-            // You can tweak this exact RGB value in the Properties window to perfectly match your panel.
             this.BackColor = Color.FromArgb(35, 45, 55);
 
             this.ForeColor = Color.White;
@@ -24,19 +22,16 @@ namespace TixNova__Final
             this.Cursor = Cursors.Hand;
             this.Font = new Font("Segoe UI Semibold", 10.5F, FontStyle.Bold);
 
-            // Layout settings for the icon and text
             this.TextImageRelation = TextImageRelation.ImageBeforeText;
             this.ImageAlign = ContentAlignment.MiddleCenter;
             this.TextAlign = ContentAlignment.MiddleCenter;
 
-            // Hover effects to make it feel interactive
             this.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 65, 80);
             this.FlatAppearance.MouseDownBackColor = Color.FromArgb(25, 35, 45);
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            // Draw background, text, and image first
             base.OnPaint(e);
 
             Graphics g = e.Graphics;
@@ -53,10 +48,8 @@ namespace TixNova__Final
                 path.AddArc(rect.X, rect.Bottom - radius, radius, radius, 90, 90);
                 path.CloseFigure();
 
-                // Clip the button to the rounded shape
                 this.Region = new Region(path);
 
-                // Draw the custom outline
                 if (BorderThickness > 0)
                 {
                     using (Pen pen = new Pen(BorderColor, BorderThickness))

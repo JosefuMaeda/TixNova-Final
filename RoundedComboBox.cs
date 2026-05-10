@@ -7,7 +7,7 @@ namespace TixNovaPlus_Final
 {
     public class RoundedComboBox : ComboBox
     {
-        private int _borderRadius = 12;                     // Slightly larger radius
+        private int _borderRadius = 12;      
         private Color _borderColor = Color.Cyan;
         private Color _focusedBorderColor = Color.FromArgb(0, 255, 255);
         private Color _backColor = Color.FromArgb(30, 30, 30);
@@ -76,11 +76,9 @@ namespace TixNovaPlus_Final
             DropDownStyle = ComboBoxStyle.DropDownList;
             FlatStyle = FlatStyle.Flat;
 
-            // --- BIGGER DEFAULT APPEARANCE ---
-            Font = new Font("Segoe UI", 12F, FontStyle.Regular);   // Larger font
-            ItemHeight = 40;                                        // Taller dropdown items
-            Size = new Size(450, 50);                               // Bigger default size
-            // ---------------------------------
+            Font = new Font("Segoe UI", 12F, FontStyle.Regular);  
+            ItemHeight = 40;                                    
+            Size = new Size(450, 50);                              
 
             DrawMode = DrawMode.OwnerDrawVariable;
         }
@@ -95,27 +93,24 @@ namespace TixNovaPlus_Final
             Rectangle rect = new Rectangle(0, 0, Width - 1, Height - 1);
             GraphicsPath path = GetRoundedRectangle(rect, _borderRadius);
 
-            // Background
             using (SolidBrush bgBrush = new SolidBrush(_isHovered ? _hoverBackColor : _backColor))
             {
                 g.FillPath(bgBrush, path);
             }
 
-            // Border color
             Color currentBorder = _borderColor;
             if (_isFocused)
                 currentBorder = _focusedBorderColor;
             else if (_isHovered)
                 currentBorder = _hoverBorderColor;
 
-            using (Pen borderPen = new Pen(currentBorder, 2f))   // Slightly thicker border for bigger look
+            using (Pen borderPen = new Pen(currentBorder, 2f))
             {
                 g.DrawPath(borderPen, path);
             }
 
-            // Draw selected text
             string displayText = (SelectedItem != null) ? SelectedItem.ToString() : Text;
-            Rectangle textRect = new Rectangle(10, 0, Width - 35, Height); // Adjusted padding
+            Rectangle textRect = new Rectangle(10, 0, Width - 35, Height);
             using (SolidBrush textBrush = new SolidBrush(_textColor))
             {
                 StringFormat sf = new StringFormat
@@ -126,7 +121,6 @@ namespace TixNovaPlus_Final
                 g.DrawString(displayText, Font, textBrush, textRect, sf);
             }
 
-            // Draw arrow - scaled to control height
             int arrowWidth = 14;
             int arrowHeight = 8;
             int arrowX = Width - (arrowWidth + 10);
@@ -181,7 +175,7 @@ namespace TixNovaPlus_Final
 
         protected override void OnMeasureItem(MeasureItemEventArgs e)
         {
-            e.ItemHeight = ItemHeight;   // Use the public ItemHeight property (now default 40)
+            e.ItemHeight = ItemHeight;
         }
 
         protected override void OnMouseEnter(EventArgs e)
