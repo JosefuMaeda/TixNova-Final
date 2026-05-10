@@ -22,7 +22,7 @@ namespace TixNova__Final
             get
             {
                 CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x00000020; // WS_EX_TRANSPARENT: Makes the background invisible
+                cp.ExStyle |= 0x00000020; 
                 return cp;
             }
         }
@@ -88,9 +88,7 @@ namespace TixNova__Final
             this.Controls.Add(lbl);
         }
 
-        // ==========================================
-        // REFACTORED: Click Event Logic Method
-        // ==========================================
+     
         private void MenuItem_Click(object sender, EventArgs e)
         {
             if (!(sender is Label clickedLabel)) return;
@@ -98,7 +96,7 @@ namespace TixNova__Final
             string selectedCategory = clickedLabel.Text;
             Form mainDashboard = this.FindForm();
 
-            // Hide the dashboard safely (Simplifies IDE0031)
+            
             mainDashboard?.Hide();
 
             switch (selectedCategory)

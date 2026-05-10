@@ -12,7 +12,7 @@ namespace TixNova__Final
     {
         public CustomMenu()
         {
-            // Vertical layout matching image_b0342f.png
+            
             this.Size = new Size(280, 600);
             this.FormBorderStyle = FormBorderStyle.None;
             this.AllowTransparency = true;
@@ -87,7 +87,7 @@ namespace TixNova__Final
 
         private void InitializeSidebarUI()
         {
-            // --- Close Button ---
+            
             Label closeBtn = new Label
             {
                 Text = "✕",
@@ -101,7 +101,7 @@ namespace TixNova__Final
             closeBtn.Click += (s, e) => this.Hide();
             this.Controls.Add(closeBtn);
 
-            // --- User Profile Section ---
+           
             Panel profileCircle = new Panel
             {
                 Size = new Size(60, 60),
@@ -126,7 +126,7 @@ namespace TixNova__Final
             };
             this.Controls.Add(userLabel);
 
-            // --- Navigation Items ---
+           
             string[] items = { "My Bookings", "Account Settings", "Support Center", "Logout" };
             int startY = 170;
 
@@ -136,7 +136,7 @@ namespace TixNova__Final
                 AddMenuLink(items[i], 30, startY + (i * 45), isLogout);
             }
 
-            // --- Footer links ---
+           
             string[] footer = { "About Us", "Privacy", "Terms", "Cookie Policy" };
             for (int i = 0; i < footer.Length; i++)
             {
@@ -164,44 +164,43 @@ namespace TixNova__Final
             {
                 if (text == "My Bookings")
                 {
-                    // 1. Create the new form
+                    
                     MyBookings bookingsForm = new MyBookings();
 
-                    // 2. Show it FIRST
+                    
                     bookingsForm.Show();
 
-                    // 3. Hide the Side Menu (this form)
+                   
                     this.Hide();
 
-                    // 4. Find the Dashboard/Main window and hide it safely
+                    
                     HideAllOtherForms(bookingsForm);
                 }
                 else if (text == "Account Settings")
                 {
-                    // 1. Create and Show the Account Center
+                    
                     AccountCenter accountForm = new AccountCenter();
                     accountForm.Show();
 
-                    // 2. Hide the side menu
+                    
                     this.Hide();
 
-                    // 3. Hide everything else (Dashboard, etc.)
+                    
                     HideAllOtherForms(accountForm);
                 }
                 else if (text == "Logout")
                 {
-                    // 1. Clear the current user session
-                    UserSession.CurrentUsername = null; // or "" depending on how your class handles it
+                    
+                    UserSession.CurrentUsername = null; 
 
-                    // 2. Instantiate and show your Login Form 
-                    // IMPORTANT: Change 'LoginForm' if your class is named differently (e.g., Form1, Login)
+                   
                     LoginForm loginForm = new LoginForm();
                     loginForm.Show();
 
-                    // 3. Hide the custom menu
+                    
                     this.Hide();
 
-                    // 4. Hide all other forms (like the Dashboard)
+                    
                     HideAllOtherForms(loginForm);
                 }
             };
@@ -214,7 +213,7 @@ namespace TixNova__Final
             List<Form> formsToHide = new List<Form>();
             foreach (Form f in Application.OpenForms)
             {
-                // Don't hide the form we just opened, and don't hide the menu itself yet
+                
                 if (f != activeForm && f.Visible && f.Name != "CustomMenu")
                 {
                     formsToHide.Add(f);
@@ -244,12 +243,11 @@ namespace TixNova__Final
             Graphics g = e.Graphics;
             g.SmoothingMode = SmoothingMode.AntiAlias;
 
-            // IMPORTANT: Use the exact same bounds as your Region
+           
             Rectangle rect = new Rectangle(0, 0, this.Width, this.Height);
             using (GraphicsPath path = GetRoundedRect(rect, 20))
             {
-                // Use a semi-transparent black to "darken" the blur 
-                // This makes it look more like your reference image
+               
                 using (SolidBrush bg = new SolidBrush(Color.FromArgb(150, 10, 15, 25)))
                     g.FillPath(bg, path);
 

@@ -17,7 +17,7 @@ namespace TixNova__Final
             InitializeComponent();
         }
 
-        private void roundedPictureBox1_Click(object sender, EventArgs e)
+        private void RoundedPictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
         }

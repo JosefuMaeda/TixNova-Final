@@ -14,7 +14,7 @@ namespace TixNova__Final
 {
     public partial class BookingSeats : Form
     {
-        // --- UI FIELDS ---
+       
         private FlowLayoutPanel flowLayoutPanelSeats;
         private readonly Color neonBlue = Color.FromArgb(0, 180, 216);
         private readonly Color glassBorder = Color.FromArgb(120, 0, 180, 216);
@@ -27,17 +27,17 @@ namespace TixNova__Final
         {
             InitializeComponent();
             _bookingData = bookingData;
-            // Enable styles immediately
+            
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer, true);
 
-            // Hook into the Shown event to load content AFTER the window appears
+          
             this.Shown += (s, e) => {
                 SetupSeatPickerUI();
                 SetupBottomButtons();
             };
 
-            // Keep only non-heavy styling here
+            
             MakeRoundedGradientButton(MenuButton, Color.FromArgb(78, 199, 220), Color.FromArgb(7, 89, 179), 30);
             MakeRoundedGradientButton(SearchButton, Color.FromArgb(78, 199, 220), Color.FromArgb(7, 89, 179), 35);
             SetupAllLinkLabelsGlow();
@@ -62,7 +62,7 @@ namespace TixNova__Final
                 mainContainer.Region = new Region(GetRoundedRectanglePath(mainContainer.ClientRectangle, 30));
             };
 
-            // Only use Paint for the border
+            
             mainContainer.Paint += (s, e) => {
                 e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
                 using (GraphicsPath path = GetRoundedRectanglePath(mainContainer.ClientRectangle, 30))
@@ -86,7 +86,7 @@ namespace TixNova__Final
             };
             mainContainer.Controls.Add(lblScreen);
 
-            // Flow panel for the bigger 60x60 seats
+            
             flowLayoutPanelSeats = new FlowLayoutPanel
             {
                 Size = new Size(980, 550),
@@ -107,7 +107,7 @@ namespace TixNova__Final
             flowLayoutPanelSeats.Controls.Clear();
 
             char[] rows = { 'A', 'B', 'C', 'D', 'E', 'F', 'G' };
-            // Example occupied seats based on your screenshot
+           
             var occupied = new List<string> { "A1", "A2", "C5", "D6", "G10", "G11" };
 
             foreach (char row in rows)
@@ -118,8 +118,8 @@ namespace TixNova__Final
                     SeatButton btn = new SeatButton
                     {
                         Text = i.ToString(),
-                        SeatRow = row,        // ADD THIS - sets the row letter (A, B, C, etc.)
-                        SeatNumber = i        // ADD THIS - sets the seat number
+                        SeatRow = row,        
+                        SeatNumber = i        
                     };
                     string id = $"{row}{i}";
                     if (occupied.Contains(id)) btn.SetStatus("Sold");
@@ -145,18 +145,16 @@ namespace TixNova__Final
             Button btnBack = new Button { Text = "BACK", Size = new Size(btnWidth, btnHeight), Location = new Point(containerX, bottomY), ForeColor = Color.White, Font = new Font("Segoe UI", 11, FontStyle.Bold) };
             Button btnNext = new Button { Text = "NEXT", Size = new Size(btnWidth, btnHeight), Location = new Point(containerX + containerWidth - btnWidth, bottomY), ForeColor = Color.White, Font = new Font("Segoe UI", 11, FontStyle.Bold) };
 
-            // --- FUNCTIONALITY START ---
-
-            // Back Button Logic
+           
             btnBack.Click += (s, e) =>
             {
-                // Replace 'MoviesForm' with the actual name of your previous screen
+                
                 ShopBuy prev = new ShopBuy();
                 prev.Show();
-                this.Close(); // Close this form to free up memory
+                this.Close(); 
             };
 
-            // Next Button Logic
+            
             btnNext.Click += (s, e) =>
             {
                 var selected = GetSelectedSeatNames();
@@ -167,21 +165,21 @@ namespace TixNova__Final
                 }
                 else
                 {
-                    // Save selected seats to booking data
+                    
                     if (_bookingData != null)
                     {
                         _bookingData.SelectedSeats = selected;
                         _bookingData.TicketQuantity = selected.Count;
                     }
 
-                    // Open the Ticket Details screen and pass the data
+                    
                     TicketDetails details = new TicketDetails(_bookingData, selected);
                     details.Show();
                     this.Hide();
                 }
             };
 
-            // --- FUNCTIONALITY END ---
+           
 
             MakeRoundedGradientButton(btnBack, Color.FromArgb(60, 60, 65), Color.FromArgb(30, 30, 35), 25);
             MakeRoundedGradientButton(btnNext, Color.FromArgb(78, 199, 220), Color.FromArgb(7, 89, 179), 25);
@@ -190,7 +188,7 @@ namespace TixNova__Final
             this.Controls.Add(btnNext);
         }
 
-        // Helper method to find which seats were clicked
+       
         private List<string> GetSelectedSeatNames()
         {
             List<string> selected = new List<string>();
@@ -198,7 +196,7 @@ namespace TixNova__Final
             {
                 if (control is SeatButton seat && seat.Status == "Selected")
                 {
-                    selected.Add(seat.SeatId); // This will return "A1", "B4", "C7", etc.
+                    selected.Add(seat.SeatId); 
                 }
             }
             return selected;
@@ -226,7 +224,7 @@ namespace TixNova__Final
             }
         }
 
-        // --- NAVIGATION HANDLERS (Fixes CS1061 Errors) ---
+       
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) { new MainDashBoard().Show(); this.Hide(); }
         private void LinkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) { new MoviesForm().Show(); this.Hide(); }
         private void LinkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) { new CinemasForm().Show(); this.Hide(); }
@@ -270,7 +268,7 @@ namespace TixNova__Final
             else { _sideMenu.Visible = !_sideMenu.Visible; }
         }
 
-        // --- HELPERS & STYLING ---
+        
         public GraphicsPath GetRoundedRectanglePath(Rectangle rect, int radius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -304,7 +302,7 @@ namespace TixNova__Final
                     else if (Status == "Selected") SetStatus("Available");
                 };
 
-                // This sets the physical boundary of the button once
+                
                 this.HandleCreated += (s, e) => {
                     var parent = (BookingSeats)this.FindForm();
                     if (parent != null)
@@ -323,24 +321,24 @@ namespace TixNova__Final
                 if (status == "Selected") { BackColor = Color.FromArgb(0, 180, 216); ForeColor = Color.Black; }
                 else if (status == "Sold") { BackColor = Color.FromArgb(70, 70, 70); Enabled = false; }
                 else { BackColor = Color.FromArgb(160, 160, 160); ForeColor = Color.Black; }
-                this.Invalidate(); // Redraw immediately when status changes
+                this.Invalidate(); 
             }
 
             protected override void OnPaint(PaintEventArgs pevent)
             {
-                // 1. Clear the button area with the current BackColor
+                
                 pevent.Graphics.Clear(this.BackColor);
 
-                // 2. Set high quality for text only
+               
                 pevent.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
 
-                // 3. Draw the seat number (text)
+                
                 TextRenderer.DrawText(pevent.Graphics, Text, Font, ClientRectangle, ForeColor,
                     TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
             }
         }
 
-        // Standard DLLs for blur effects
+       
         [DllImport("user32.dll")] internal static extern int SetWindowCompositionAttribute(IntPtr hwnd, ref WindowCompositionAttributeData data);
         [StructLayout(LayoutKind.Sequential)] internal struct WindowCompositionAttributeData { public WindowCompositionAttribute Attribute; public IntPtr Data; public int SizeOfData; }
         internal enum WindowCompositionAttribute { WCA_ACCENT_POLICY = 19 }

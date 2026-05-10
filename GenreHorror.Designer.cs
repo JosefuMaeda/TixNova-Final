@@ -134,7 +134,7 @@
             this.roundedPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox1.TabIndex = 53;
             this.roundedPictureBox1.TabStop = false;
-            this.roundedPictureBox1.Click += new System.EventHandler(this.roundedPictureBox1_Click);
+            this.roundedPictureBox1.Click += new System.EventHandler(this.RoundedPictureBox1_Click);
             // 
             // subheadingGradientLabel1
             // 

@@ -2,14 +2,14 @@
 
 public class BookingData
 {
-    // Booking Information
+    
     public string MovieName { get; set; }
     public string Cinema { get; set; }
     public string Schedule { get; set; }
     public List<SnackItem> Snacks { get; set; }
     public List<string> SelectedSeats { get; set; }
 
-    // Pricing
+   
     public decimal TicketPrice { get; set; } = 250.00m;
     public int TicketQuantity { get; set; } = 1;
     public decimal TotalTicketPrice => TicketPrice * TicketQuantity;

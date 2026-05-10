@@ -22,32 +22,32 @@ namespace TixNova__Final
 
             InitializeGlassContainer();
 
-            // Run this inside the Form_Load or after InitializeComponent
+            
             glassContainer.Left = (this.ClientSize.Width - glassContainer.Width) / 2;
             glassContainer.Top = (this.ClientSize.Height - glassContainer.Height) / 2;
 
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
 
-            // Initialize UI Elements
+            
             MakeRoundedGradientButton(MenuButton, Color.FromArgb(78, 199, 220), Color.FromArgb(7, 89, 179), 30);
             MakeRoundedGradientButton(SearchButton, Color.FromArgb(78, 199, 220), Color.FromArgb(7, 89, 179), 35);
             SetupAllLinkLabelsGlow();
             SetupMenu();
 
-            // Load the dynamic list
+            
             LoadAccountProfile();
         }
         private void InitializeGlassContainer()
         {
-            // Create the main glass container and assign it to our class variable
+            
             glassContainer = new Panel
             {
                 Size = new Size(900, 550),
                 BackColor = Color.FromArgb(100, 20, 20, 20),
             };
 
-            // CENTER logic:
+            
             glassContainer.Location = new Point((this.ClientSize.Width - glassContainer.Width) / 2,
                                               (this.ClientSize.Height - glassContainer.Height) / 2);
 
@@ -62,7 +62,7 @@ namespace TixNova__Final
 
             this.Controls.Add(glassContainer);
         } 
-        // Helper to calculate rounded paths
+       
         private System.Drawing.Drawing2D.GraphicsPath GetRoundedRect(Rectangle bounds, int radius)
         {
             int diameter = radius * 2;
@@ -82,7 +82,7 @@ namespace TixNova__Final
         }
         private void LoadAccountProfile()
         {
-            // 1. Profile Picture (Circle)
+            
             PictureBox profilePic = new PictureBox
             {
                 Size = new Size(110, 110),
@@ -98,12 +98,12 @@ namespace TixNova__Final
                 }
             };
 
-            // 2. Current Username Label
+            
             Label lblUserTitle = new Label
             {
                 Text = "CURRENT USERNAME",
                 Font = new Font("Segoe UI", 9f, FontStyle.Bold),
-                ForeColor = Color.FromArgb(103, 190, 217), // Using your signature blue
+                ForeColor = Color.FromArgb(103, 190, 217), 
                 TextAlign = ContentAlignment.MiddleCenter,
                 Size = new Size(glassContainer.Width, 20),
                 Location = new Point(0, 160)
@@ -119,22 +119,21 @@ namespace TixNova__Final
                 Location = new Point(0, 180)
             };
 
-            // 3. Action Buttons Section
-            // Button: Change Username
+            
             Button btnChangeUser = CreateSettingsButton("CHANGE USERNAME", 260);
             btnChangeUser.Click += (s, e) => {
-                // Add your logic to show a text box or popup
+                
                 MessageBox.Show("Username change requested.");
             };
 
-            // Button: Change Password
+            
             Button btnChangePass = CreateSettingsButton("CHANGE PASSWORD", 320);
             btnChangePass.Click += (s, e) => {
-                // Add your logic to show a password change popup
+                
                 MessageBox.Show("Password change requested.");
             };
 
-            // 4. Log Out (Red Gradient)
+            
             Button btnLogout = new Button
             {
                 Text = "LOG OUT",
@@ -145,7 +144,7 @@ namespace TixNova__Final
             };
             MakeRoundedGradientButton(btnLogout, Color.FromArgb(200, 45, 45), Color.FromArgb(150, 0, 0), 20);
 
-            // Add everything to glassContainer
+            
             glassContainer.Controls.Add(profilePic);
             glassContainer.Controls.Add(lblUserTitle);
             glassContainer.Controls.Add(lblActualName);
@@ -154,7 +153,7 @@ namespace TixNova__Final
             glassContainer.Controls.Add(btnLogout);
         }
 
-        // Helper to keep buttons consistent
+        
         private Button CreateSettingsButton(string text, int yPos)
         {
             Button btn = new Button
@@ -166,7 +165,7 @@ namespace TixNova__Final
                 Font = new Font("Segoe UI", 10f, FontStyle.Bold),
                 Cursor = Cursors.Hand
             };
-            // Using your blue gradient from the SearchButton logic
+            
             MakeRoundedGradientButton(btn, Color.FromArgb(78, 199, 220), Color.FromArgb(7, 89, 179), 20);
             return btn;
         }
@@ -323,7 +322,7 @@ namespace TixNova__Final
         }
         #endregion
 
-        // Navigation Methods
+        
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             MainDashBoard main = new MainDashBoard();

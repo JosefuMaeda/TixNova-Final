@@ -76,7 +76,7 @@ namespace TixNova__Final
         }
 
 
-        // --- Your Updated SetupMenu ---
+        
 
         private Form dropDownForm;
         private DateTime menuLastClosedTime = DateTime.MinValue;
@@ -86,7 +86,7 @@ namespace TixNova__Final
         {
             menuContent = new TixNovaMenuControl
             {
-                Location = new Point(0, 0) // set directly at creation
+                Location = new Point(0, 0) 
             };
 
             dropDownForm = new Form
@@ -95,7 +95,7 @@ namespace TixNova__Final
                 StartPosition = FormStartPosition.Manual,
                 ShowInTaskbar = false,
                 Size = menuContent.Size,
-                BackColor = Color.Black, // punch-out background
+                BackColor = Color.Black,
                 Region = new Region(menuContent.GetRegionPath())
             };
 
@@ -105,7 +105,7 @@ namespace TixNova__Final
             dropDownForm.Deactivate += (s, e) =>
             {
                 dropDownForm.Hide();
-                menuLastClosedTime = DateTime.Now; // record when closed
+                menuLastClosedTime = DateTime.Now; 
             };
         }
 
@@ -114,7 +114,7 @@ namespace TixNova__Final
         {
             protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
             {
-                // Leave empty
+                
             }
         }
         private void SetupAllLinkLabelsGlow()
@@ -162,29 +162,29 @@ namespace TixNova__Final
 
         private void MakeRoundedGradientButton(Button btn, Color startColor, Color endColor, int radius = 20)
         {
-            // Remove default button styling
+            
             btn.FlatStyle = FlatStyle.Popup;
             btn.FlatAppearance.BorderSize = 0;
 
-            // Store gradient colors (you can change these dynamically)
+            
             btn.Tag = new GradientInfo { StartColor = startColor, EndColor = endColor };
-            // Store original size and location for hover
+            
             var originalSize = btn.Size;
             var originalLocation = btn.Location;
 
-            // Hover events
+            
             btn.MouseEnter += (sender, e) =>
             {
                 btn.Size = new Size(btn.Width + 5, btn.Height + 5);
                 btn.Location = new Point(btn.Location.X - 2, btn.Location.Y - 2);
-                btn.Cursor = Cursors.Hand; // Optional: changes cursor to hand
+                btn.Cursor = Cursors.Hand; 
             };
 
             btn.MouseLeave += (sender, e) =>
             {
                 btn.Size = originalSize;
                 btn.Location = originalLocation;
-                btn.Cursor = Cursors.Default; // Optional: restores cursor
+                btn.Cursor = Cursors.Default; 
             };
 
 
@@ -193,43 +193,43 @@ namespace TixNova__Final
                 Button b = sender as Button;
                 e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-                // Create rounded rectangle path
+                
                 using (var path = new System.Drawing.Drawing2D.GraphicsPath())
                 {
                     Rectangle rect = new Rectangle(0, 0, b.Width - 1, b.Height - 1);
 
-                    // Create rounded corners
+                    
                     path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
                     path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90);
                     path.AddArc(rect.X + rect.Width - radius, rect.Y + rect.Height - radius, radius, radius, 0, 90);
                     path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
                     path.CloseFigure();
 
-                    // Apply rounded region to button
+                    
                     b.Region = new Region(path);
 
-                    // Create gradient brush
+                    
                     GradientInfo gradient = (GradientInfo)b.Tag;
                     using (var brush = new System.Drawing.Drawing2D.LinearGradientBrush(
                         rect,
                         gradient.StartColor,
                         gradient.EndColor,
-                        System.Drawing.Drawing2D.LinearGradientMode.Vertical)) // Change to Horizontal if preferred
+                        System.Drawing.Drawing2D.LinearGradientMode.Vertical)) 
                     {
                         e.Graphics.FillPath(brush, path);
                     }
 
-                    // Draw button text
+                    
                     TextRenderer.DrawText(e.Graphics, b.Text, b.Font,
                         rect, b.ForeColor,
                         TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
                 }
             };
 
-            // Redraw on resize
+            
             btn.Resize += (sender, e) => btn.Invalidate();
         }
-        // Helper class to store gradient info
+        
         private class GradientInfo
         {
             public Color StartColor { get; set; }
