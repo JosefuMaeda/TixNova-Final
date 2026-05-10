@@ -9,9 +9,7 @@
 
 ---
 <p align="center">
-  <img width="254" height="74" alt="TixNova+" src="https://github.com/user-attachments/assets/470f8262-50c4-493a-98df-f292660cd010" />
   <img width="516" height="121" alt="UML" src="https://github.com/user-attachments/assets/c462edf2-ce07-42db-b444-cdc1d1f186c3" />
-
 </p>
 
 
