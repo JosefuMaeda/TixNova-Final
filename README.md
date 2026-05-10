@@ -6,7 +6,7 @@
 
 </p>
 
-## 📖 Project Description
+##  Project Description
 
 TixNova+ is a modern, feature-rich desktop application built using **C# and .NET Windows Forms**, designed to simulate a complete cinema ticketing experience. Moving away from the traditional, rigid look of standard WinForms, TixNova+ prioritizes user experience with a highly customized, visually appealing interface. The application utilizes custom-built UI controls including rounded gradient buttons, glowing labels, and native Windows glass/acrylic effects. With an intuitive dashboard, users can effortlessly browse movies by genre or age rating, navigate custom search menus, check cinema availability, and seamlessly book tickets within a fluid, dynamic desktop environment.
 
@@ -39,15 +39,6 @@ TixNova+ is architected using core Object-Oriented Programming principles to ens
 * **Inheritance:** The application extensively leverages inheritance to create its highly customized UI. Custom controls, such as the rounded gradient buttons, glowing link labels, and custom drop-down menus, inherit directly from base Windows Forms classes (e.g., `Button`, `Form`, or `UserControl`). This allows the app to extend default behaviors without rewriting fundamental WinForms logic.
 * **Polymorphism:** Through method overriding, TixNova+ implements dynamic UI behaviors. Standard rendering methods, like `OnPaint()`, are overridden in custom controls to draw smooth gradients, custom rounded paths, and glowing effects instead of relying on the default rigid WinForms graphics.
 * **Abstraction:** Complex backend logic—such as seat conflict resolution, ticket generation, and custom blur-behind API calls (`user32.dll`)—is abstracted away from the front-end interface. The UI forms simply interact with high-level methods, hiding the underlying complexity of state management and memory handling.
-
----
-
-##  Built With
-
-* [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) - The primary programming language.
-* [.NET Framework](https://dotnet.microsoft.com/en-us/) - The underlying framework.
-* **Windows Forms (WinForms)** - Used for the graphical user interface.
-* **GDI+ / System.Drawing** - Utilized for custom control rendering (gradients, rounded corners, drop shadows).
 
 ---
 
