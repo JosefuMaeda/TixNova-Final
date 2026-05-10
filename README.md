@@ -8,7 +8,7 @@
 
 ##  Project Description
 
-TixNova+ is a modern, feature-rich desktop application built using **C# and .NET Windows Forms**, designed to simulate a complete cinema ticketing experience. Moving away from the traditional, rigid look of standard WinForms, TixNova+ prioritizes user experience with a highly customized, visually appealing interface. The application utilizes custom-built UI controls including rounded gradient buttons, glowing labels, and native Windows glass/acrylic effects. With an intuitive dashboard, users can effortlessly browse movies by genre or age rating, navigate custom search menus, check cinema availability, and seamlessly book tickets within a fluid, dynamic desktop environment.
+TixNova+ is a modern, feature rich desktop application built using **C# and .NET Windows Forms**, designed to simulate a complete cinema ticketing experience. Moving away from the traditional, rigid look of standard WinForms, TixNova+ prioritizes user experience with a highly customized, visually appealing interface. The application utilizes custom-built UI controls including rounded gradient buttons, glowing labels, and native Windows glass/acrylic effects. With an intuitive dashboard, users can effortlessly browse movies by genre or age rating, navigate custom search menus, check cinema availability, and seamlessly book tickets within a fluid, dynamic desktop environment.
 
 ---
 
