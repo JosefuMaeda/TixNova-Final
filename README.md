@@ -14,20 +14,20 @@
 
 <h1 align="center">TixNova+ | Modern Cinema Ticketing System</h1>
 
-## 📖 Project Description
+##  Project Description
 
 TixNova+ is a modern, feature rich desktop application built using **C# and .NET Windows Forms**, designed to simulate a complete cinema ticketing experience. Moving away from the traditional, rigid look of standard WinForms, TixNova+ prioritizes user experience with a highly customized, visually appealing interface. The application utilizes custom-built UI controls including rounded gradient buttons, glowing labels, and native Windows glass/acrylic effects. With an intuitive dashboard, users can effortlessly browse movies by genre or age rating, navigate custom search menus, check cinema availability, and seamlessly book tickets within a fluid, dynamic desktop environment.
 
 ---
 
-## 📊 UML Diagram
+##  UML Diagram
 <p align="center">
   <img width="1581" height="995" alt="UML" src="https://github.com/user-attachments/assets/1f18beb9-9333-4fa9-a2a9-5d0fc9ec5367" />
 </p>
 
 ---
 
-## ✨ Features
+##  Features
 
 ### Main Dashboard
 The Main Dashboard serves as the **central hub** of the application, highlighting today's **trending movies** while providing seamless navigation to various modules. The Movies section displays both **Now Showing** and **Coming Soon** titles. Users can explore different locations and view their ratings in the **Cinemas module**, or pre-order snacks through the built-in **Shop**. For targeted browsing, the Categories section efficiently organizes films by **genre and age ratings**. Additionally, a robust **Search Menu** ensures quick and easy navigation throughout the entire system.
@@ -46,7 +46,7 @@ Built from the ground up to break away from traditional WinForms, TixNova+ boast
 
 ---
 
-## 🧱 Object-Oriented Programming (OOP) Principles
+## Object-Oriented Programming (OOP) Principles
 
 TixNova+ is architected using core Object-Oriented Programming principles to ensure the codebase remains scalable, maintainable, and highly modular:
 
@@ -57,7 +57,7 @@ TixNova+ is architected using core Object-Oriented Programming principles to ens
 
 ---
 
-## 💻 Quick Overview of the System
+## Quick Overview of the System
 
 ### Login Form
 <img width="1919" height="1079" alt="Login Page" src="https://github.com/user-attachments/assets/dc05cc2c-85d3-44fe-9822-792b5d938b5a" />
@@ -67,7 +67,7 @@ TixNova+ is architected using core Object-Oriented Programming principles to ens
 
 ---
 
-## ⚙️ How It Works
+##  How It Works
 
 TixNova+ is designed to provide a seamless, end-to-end user journey, simulating a real-world cinema kiosk or desktop booking software:
 
@@ -80,7 +80,7 @@ TixNova+ is designed to provide a seamless, end-to-end user journey, simulating 
 
 ---
 
-## 🚀 How to Run
+##  How to Run
 
 To run TixNova+ on your local machine, follow these instructions:
 
@@ -93,24 +93,17 @@ To run TixNova+ on your local machine, follow these instructions:
 1. **Clone the Repository:** Open your terminal or command prompt and run the following command to clone the project to your local machine:
    ```bash
    git clone [https://github.com/JosefuMaeda/TixNova-Final.git](https://github.com/JosefuMaeda/TixNova-Final.git)
-
-```
-
-*(Alternatively, you can download the project as a ZIP file and extract it.)*
+   ```
+   *(Alternatively, you can download the project as a ZIP file and extract it.)*
 2. **Open the Project:** Navigate to the cloned folder and open the `.slnx` or `.csproj` file using Visual Studio.
 3. **Build the Solution:** Go to the top menu and select **Build > Build Solution** (or press `Ctrl+Shift+B`). This step is crucial as it compiles the custom UI classes so they render correctly in the designer and during runtime.
 4. **Run the Application:** Click the **Start** button at the top of Visual Studio or press `F5` to compile and launch TixNova+.
+## Contributors
 
----
-
-## 👥 Contributors
-
-This project was brought to life by the following developers:
-
-* **Edmar D. Visto** - [@Vmar10](https://www.google.com/search?q=https://github.com/Vmar10)
-* **jeilylyly** - [@jeilyannnmerhan](https://www.google.com/search?q=https://github.com/jeilyannnmerhan)
-* **Aj** - [@Faijeyy](https://www.google.com/search?q=https://github.com/Faijeyy)
-
-```
+| Name | Role | Github |
+| :--- | :--- | :--- |
+| Edmar D. Visto | Developer | [https://github.com/Vmar10](https://github.com/Vmar10) |
+| jeilylyly | Developer | [https://github.com/jeilyannnmerhan](https://github.com/jeilyannnmerhan) |
+| Aj | Developer | [https://github.com/Faijeyy](https://github.com/Faijeyy) |
 
 ```
