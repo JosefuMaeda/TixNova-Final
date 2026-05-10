@@ -221,7 +221,7 @@
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Yellow;
-            this.label16.Location = new System.Drawing.Point(243, 317);
+            this.label16.Location = new System.Drawing.Point(257, 319);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(58, 25);
             this.label16.TabIndex = 30;
@@ -230,7 +230,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(215, 314);
+            this.pictureBox9.Location = new System.Drawing.Point(228, 314);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(30, 30);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -275,7 +275,7 @@
             // roundedPictureBox6
             // 
             this.roundedPictureBox6.BorderRadius = 20;
-            this.roundedPictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox6.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox6.Image")));
             this.roundedPictureBox6.Location = new System.Drawing.Point(10, 15);
             this.roundedPictureBox6.Name = "roundedPictureBox6";
@@ -297,7 +297,7 @@
             this.roundedPanel5.Controls.Add(this.gradientLabel6);
             this.roundedPanel5.Controls.Add(this.roundedPictureBox5);
             this.roundedPanel5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.roundedPanel5.Location = new System.Drawing.Point(778, 569);
+            this.roundedPanel5.Location = new System.Drawing.Point(778, 563);
             this.roundedPanel5.Name = "roundedPanel5";
             this.roundedPanel5.Size = new System.Drawing.Size(318, 348);
             this.roundedPanel5.TabIndex = 39;
@@ -308,7 +308,7 @@
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Yellow;
-            this.label13.Location = new System.Drawing.Point(243, 317);
+            this.label13.Location = new System.Drawing.Point(257, 319);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(57, 25);
             this.label13.TabIndex = 30;
@@ -317,7 +317,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(215, 314);
+            this.pictureBox8.Location = new System.Drawing.Point(228, 314);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(30, 30);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -362,7 +362,7 @@
             // roundedPictureBox5
             // 
             this.roundedPictureBox5.BorderRadius = 20;
-            this.roundedPictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox5.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox5.Image")));
             this.roundedPictureBox5.Location = new System.Drawing.Point(10, 15);
             this.roundedPictureBox5.Name = "roundedPictureBox5";
@@ -384,7 +384,7 @@
             this.roundedPanel4.Controls.Add(this.gradientLabel5);
             this.roundedPanel4.Controls.Add(this.roundedPictureBox4);
             this.roundedPanel4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.roundedPanel4.Location = new System.Drawing.Point(349, 575);
+            this.roundedPanel4.Location = new System.Drawing.Point(349, 563);
             this.roundedPanel4.Name = "roundedPanel4";
             this.roundedPanel4.Size = new System.Drawing.Size(318, 348);
             this.roundedPanel4.TabIndex = 38;
@@ -395,7 +395,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Yellow;
-            this.label10.Location = new System.Drawing.Point(243, 317);
+            this.label10.Location = new System.Drawing.Point(260, 317);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 25);
             this.label10.TabIndex = 30;
@@ -404,7 +404,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(215, 314);
+            this.pictureBox7.Location = new System.Drawing.Point(231, 314);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(30, 30);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -449,7 +449,7 @@
             // roundedPictureBox4
             // 
             this.roundedPictureBox4.BorderRadius = 20;
-            this.roundedPictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox4.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox4.Image")));
             this.roundedPictureBox4.Location = new System.Drawing.Point(10, 15);
             this.roundedPictureBox4.Name = "roundedPictureBox4";
@@ -482,16 +482,16 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Yellow;
-            this.label7.Location = new System.Drawing.Point(243, 317);
+            this.label7.Location = new System.Drawing.Point(257, 317);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 25);
+            this.label7.Size = new System.Drawing.Size(58, 25);
             this.label7.TabIndex = 30;
-            this.label7.Text = "4/5";
+            this.label7.Text = "4.0/5";
             // 
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(215, 314);
+            this.pictureBox6.Location = new System.Drawing.Point(228, 314);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(30, 30);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -536,7 +536,7 @@
             // roundedPictureBox3
             // 
             this.roundedPictureBox3.BorderRadius = 20;
-            this.roundedPictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox3.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox3.Image")));
             this.roundedPictureBox3.Location = new System.Drawing.Point(10, 15);
             this.roundedPictureBox3.Name = "roundedPictureBox3";
@@ -569,7 +569,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Yellow;
-            this.label4.Location = new System.Drawing.Point(243, 317);
+            this.label4.Location = new System.Drawing.Point(257, 317);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 25);
             this.label4.TabIndex = 30;
@@ -578,7 +578,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(215, 314);
+            this.pictureBox5.Location = new System.Drawing.Point(228, 314);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(30, 30);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -623,7 +623,7 @@
             // roundedPictureBox2
             // 
             this.roundedPictureBox2.BorderRadius = 20;
-            this.roundedPictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox2.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox2.Image")));
             this.roundedPictureBox2.Location = new System.Drawing.Point(10, 15);
             this.roundedPictureBox2.Name = "roundedPictureBox2";
@@ -656,7 +656,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Yellow;
-            this.label3.Location = new System.Drawing.Point(243, 317);
+            this.label3.Location = new System.Drawing.Point(260, 317);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 25);
             this.label3.TabIndex = 30;
@@ -665,7 +665,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(215, 314);
+            this.pictureBox3.Location = new System.Drawing.Point(231, 314);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(30, 30);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -710,7 +710,7 @@
             // roundedPictureBox1
             // 
             this.roundedPictureBox1.BorderRadius = 20;
-            this.roundedPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox1.Image")));
             this.roundedPictureBox1.Location = new System.Drawing.Point(10, 15);
             this.roundedPictureBox1.Name = "roundedPictureBox1";
