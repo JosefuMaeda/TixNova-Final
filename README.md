@@ -36,9 +36,9 @@ Built from the ground up to break away from traditional WinForms, TixNova+ boast
 TixNova+ is architected using core Object-Oriented Programming principles to ensure the codebase remains scalable, maintainable, and highly modular:
 
 * **Encapsulation:** Sensitive data, such as user session details, booking states, and shop inventory counts, are securely hidden within their respective classes. Access to these properties is strictly controlled through public methods and getter/setter properties, preventing unintended external modifications and ensuring data integrity.
-* **Inheritance:** The application extensively leverages inheritance to create its highly customized UI. Custom controls, such as the rounded gradient buttons, glowing link labels, and custom drop-down menus, inherit directly from base Windows Forms classes (e.g., `Button`, `Form`, or `UserControl`). This allows the app to extend default behaviors without rewriting fundamental WinForms logic.
-* **Polymorphism:** Through method overriding, TixNova+ implements dynamic UI behaviors. Standard rendering methods, like `OnPaint()`, are overridden in custom controls to draw smooth gradients, custom rounded paths, and glowing effects instead of relying on the default rigid WinForms graphics.
-* **Abstraction:** Complex backend logic—such as seat conflict resolution, ticket generation, and custom blur-behind API calls (`user32.dll`)—is abstracted away from the front-end interface. The UI forms simply interact with high-level methods, hiding the underlying complexity of state management and memory handling.
+* **Inheritance:** The application extensively leverages inheritance to create its highly customized UI. Custom controls, such as the rounded gradient buttons, glowing link labels, and custom drop-down menus, inherit directly from base Windows Forms classes. This allows the app to extend default behaviors without rewriting fundamental WinForms logic.
+* **Polymorphism:** Through method overriding, TixNova+ implements dynamic UI behaviors. Standard rendering method are overridden in custom controls to draw smooth gradients, custom rounded paths, and glowing effects instead of relying on the default rigid WinForms graphics.
+* **Abstraction:** Complex backend logic—such as seat conflict resolution, ticket generation, and custom blur-behind API calls is abstracted away from the front-end interface. The UI forms simply interact with high-level methods, hiding the underlying complexity of state management and memory handling.
 
 ---
 
