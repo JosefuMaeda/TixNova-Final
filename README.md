@@ -27,7 +27,7 @@ To complete the cinematic experience, TixNova+ features a **dedicated shop modul
 To personalize the user experience, the system includes robust **user session handling** and **secure login authentication**. Once logged in, users have access to their own accounts, allowing for **personalized booking history tracking** so they can easily review their past movie choices and transactions.
 
 ###  Custom UI Design
-Built from the ground up to break away from traditional WinForms, TixNova+ boasts a **highly customized and modern aesthetic**. The application features **real-time search filtering** and utilizes **native Windows glass and acrylic effects** (`user32.dll`). Designed to be **visually appealing and intuitive**, the system incorporates custom C# drawing classes to create dynamic elements like **glowing labels, rounded gradient buttons, and fading image buttons** to maximize user comfort and engagement.
+Built from the ground up to break away from traditional WinForms, TixNova+ boasts a **highly customized and modern aesthetic**. The application features **real-time search filtering** and utilizes **native Windows glass and acrylic effects**. Designed to be **visually appealing and intuitive**, the system incorporates custom C# drawing classes to create dynamic elements like **glowing labels, rounded gradient buttons, and fading image buttons** to maximize user comfort and engagement.
 
 ---
 
@@ -38,7 +38,7 @@ TixNova+ is architected using core Object-Oriented Programming principles to ens
 * **Encapsulation:** Sensitive data, such as user session details, booking states, and shop inventory counts, are securely hidden within their respective classes. Access to these properties is strictly controlled through public methods and getter/setter properties, preventing unintended external modifications and ensuring data integrity.
 * **Inheritance:** The application extensively leverages inheritance to create its highly customized UI. Custom controls, such as the rounded gradient buttons, glowing link labels, and custom drop-down menus, inherit directly from base Windows Forms classes. This allows the app to extend default behaviors without rewriting fundamental WinForms logic.
 * **Polymorphism:** Through method overriding, TixNova+ implements dynamic UI behaviors. Standard rendering method are overridden in custom controls to draw smooth gradients, custom rounded paths, and glowing effects instead of relying on the default rigid WinForms graphics.
-* **Abstraction:** Complex backend logic—such as seat conflict resolution, ticket generation, and custom blur-behind API calls is abstracted away from the front-end interface. The UI forms simply interact with high-level methods, hiding the underlying complexity of state management and memory handling.
+* **Abstraction:** Complex backend logic such as seat conflict resolution, ticket generation, and custom blur-behind API calls is abstracted away from the front-end interface. The UI forms simply interact with high-level methods, hiding the underlying complexity of state management and memory handling.
 
 ---
 
