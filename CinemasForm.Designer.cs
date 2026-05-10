@@ -35,6 +35,8 @@
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.MenuButton = new System.Windows.Forms.Button();
             this.roundedPanel6 = new TixNova_Final.RoundedPanel();
             this.label16 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
@@ -79,8 +81,6 @@
             this.roundedPictureBox1 = new TixNova_Final.RoundedPictureBox();
             this.subheadingGradientLabel1 = new TixNova__Final.SubheadingGradientLabel();
             this.gradientLabel1 = new TixNova_Final.GradientLabel();
-            this.SearchButton = new System.Windows.Forms.Button();
-            this.MenuButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.roundedPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -197,6 +197,36 @@
             this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Cyan;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel1_LinkClicked);
             // 
+            // SearchButton
+            // 
+            this.SearchButton.BackColor = System.Drawing.Color.Aqua;
+            this.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.SearchButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.SearchButton.ForeColor = System.Drawing.Color.White;
+            this.SearchButton.Location = new System.Drawing.Point(1603, 53);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(40, 40);
+            this.SearchButton.TabIndex = 42;
+            this.SearchButton.Text = "⌕";
+            this.SearchButton.UseVisualStyleBackColor = false;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            // 
+            // MenuButton
+            // 
+            this.MenuButton.BackColor = System.Drawing.Color.Aqua;
+            this.MenuButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.MenuButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.MenuButton.ForeColor = System.Drawing.Color.White;
+            this.MenuButton.Location = new System.Drawing.Point(1670, 53);
+            this.MenuButton.Name = "MenuButton";
+            this.MenuButton.Size = new System.Drawing.Size(127, 40);
+            this.MenuButton.TabIndex = 41;
+            this.MenuButton.Text = "MENU";
+            this.MenuButton.UseVisualStyleBackColor = false;
+            this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
+            // 
             // roundedPanel6
             // 
             this.roundedPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
@@ -210,7 +240,7 @@
             this.roundedPanel6.Controls.Add(this.gradientLabel7);
             this.roundedPanel6.Controls.Add(this.roundedPictureBox6);
             this.roundedPanel6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.roundedPanel6.Location = new System.Drawing.Point(1205, 563);
+            this.roundedPanel6.Location = new System.Drawing.Point(1205, 587);
             this.roundedPanel6.Name = "roundedPanel6";
             this.roundedPanel6.Size = new System.Drawing.Size(318, 348);
             this.roundedPanel6.TabIndex = 40;
@@ -297,7 +327,7 @@
             this.roundedPanel5.Controls.Add(this.gradientLabel6);
             this.roundedPanel5.Controls.Add(this.roundedPictureBox5);
             this.roundedPanel5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.roundedPanel5.Location = new System.Drawing.Point(778, 563);
+            this.roundedPanel5.Location = new System.Drawing.Point(778, 587);
             this.roundedPanel5.Name = "roundedPanel5";
             this.roundedPanel5.Size = new System.Drawing.Size(318, 348);
             this.roundedPanel5.TabIndex = 39;
@@ -384,7 +414,7 @@
             this.roundedPanel4.Controls.Add(this.gradientLabel5);
             this.roundedPanel4.Controls.Add(this.roundedPictureBox4);
             this.roundedPanel4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.roundedPanel4.Location = new System.Drawing.Point(349, 563);
+            this.roundedPanel4.Location = new System.Drawing.Point(349, 587);
             this.roundedPanel4.Name = "roundedPanel4";
             this.roundedPanel4.Size = new System.Drawing.Size(318, 348);
             this.roundedPanel4.TabIndex = 38;
@@ -471,7 +501,7 @@
             this.roundedPanel3.Controls.Add(this.gradientLabel4);
             this.roundedPanel3.Controls.Add(this.roundedPictureBox3);
             this.roundedPanel3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.roundedPanel3.Location = new System.Drawing.Point(1205, 184);
+            this.roundedPanel3.Location = new System.Drawing.Point(1205, 199);
             this.roundedPanel3.Name = "roundedPanel3";
             this.roundedPanel3.Size = new System.Drawing.Size(318, 348);
             this.roundedPanel3.TabIndex = 39;
@@ -558,7 +588,7 @@
             this.roundedPanel2.Controls.Add(this.gradientLabel3);
             this.roundedPanel2.Controls.Add(this.roundedPictureBox2);
             this.roundedPanel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.roundedPanel2.Location = new System.Drawing.Point(778, 184);
+            this.roundedPanel2.Location = new System.Drawing.Point(778, 199);
             this.roundedPanel2.Name = "roundedPanel2";
             this.roundedPanel2.Size = new System.Drawing.Size(318, 348);
             this.roundedPanel2.TabIndex = 38;
@@ -645,7 +675,7 @@
             this.roundedPanel1.Controls.Add(this.gradientLabel2);
             this.roundedPanel1.Controls.Add(this.roundedPictureBox1);
             this.roundedPanel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.roundedPanel1.Location = new System.Drawing.Point(349, 184);
+            this.roundedPanel1.Location = new System.Drawing.Point(349, 199);
             this.roundedPanel1.Name = "roundedPanel1";
             this.roundedPanel1.Size = new System.Drawing.Size(318, 348);
             this.roundedPanel1.TabIndex = 37;
@@ -740,36 +770,6 @@
             this.gradientLabel1.Size = new System.Drawing.Size(192, 45);
             this.gradientLabel1.TabIndex = 25;
             this.gradientLabel1.Text = "TIXNOVA+";
-            // 
-            // SearchButton
-            // 
-            this.SearchButton.BackColor = System.Drawing.Color.Aqua;
-            this.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.SearchButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.SearchButton.ForeColor = System.Drawing.Color.White;
-            this.SearchButton.Location = new System.Drawing.Point(1603, 53);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(40, 40);
-            this.SearchButton.TabIndex = 42;
-            this.SearchButton.Text = "⌕";
-            this.SearchButton.UseVisualStyleBackColor = false;
-            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
-            // 
-            // MenuButton
-            // 
-            this.MenuButton.BackColor = System.Drawing.Color.Aqua;
-            this.MenuButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.MenuButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.MenuButton.ForeColor = System.Drawing.Color.White;
-            this.MenuButton.Location = new System.Drawing.Point(1670, 53);
-            this.MenuButton.Name = "MenuButton";
-            this.MenuButton.Size = new System.Drawing.Size(127, 40);
-            this.MenuButton.TabIndex = 41;
-            this.MenuButton.Text = "MENU";
-            this.MenuButton.UseVisualStyleBackColor = false;
-            this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // CinemasForm
             // 
