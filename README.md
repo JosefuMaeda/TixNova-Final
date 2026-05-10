@@ -7,8 +7,7 @@
 <img width="503" height="499" alt="Screenshot 2026-05-10 172739" src="https://github.com/user-attachments/assets/13b9768d-3727-41e3-8a9c-a50f5b554bc2" />
 <img width="1901" height="946" alt="Screenshot 2026-05-10 172844" src="https://github.com/user-attachments/assets/cc14af2c-ed77-4bb3-bd1f-157f327a6586" />
 
-
-
+---
 <p align="center">
   <img width="254" height="74" alt="TixNova+" src="https://github.com/user-attachments/assets/470f8262-50c4-493a-98df-f292660cd010" />
 </p>
