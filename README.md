@@ -4,10 +4,6 @@
 
 <h1 align="center">TixNova+ | Modern Cinema Ticketing System</h1>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C#" />
-  <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt=".NET" />
-  <img src="https://img.shields.io/badge/Windows_Forms-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows Forms" />
 </p>
 
 ## 📖 Project Description
