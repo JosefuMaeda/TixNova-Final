@@ -12,6 +12,9 @@ TixNova+ is a modern, feature rich desktop application built using **C# and .NET
 
 ---
 ## UML Diagram
+![Uploading UML.png…]()
+
+
 
 
 ##  Features
