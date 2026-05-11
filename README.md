@@ -89,7 +89,7 @@ To run TixNova+ on your local machine, follow these instructions:
 2. **Open the Project:** Navigate to the cloned folder and open the `.slnx` or `.csproj` file using Visual Studio.
 3. **Build the Solution:** Go to the top menu and select **Build > Build Solution** (or press `Ctrl+Shift+B`). This step is crucial as it compiles the custom UI classes so they render correctly in the designer and during runtime.
 4. **Run the Application:** Click the **Start** button at the top of Visual Studio or press `F5` to compile and launch TixNova+.
-## 👥 Contributors
+## Contributors
 
 | Avatar | Name | Role | Github |
 | :---: | :--- | :--- | :--- |
